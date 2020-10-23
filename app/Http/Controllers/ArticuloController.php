@@ -67,7 +67,7 @@ class ArticuloController extends Controller
     {
         //
         $articulo=articulo::find($id);
-        return view('articulo.edit',compact('articulo'));
+        return view('Articulo.edit',compact('articulo'));
     }
 
     /**
