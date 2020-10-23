@@ -1,11 +1,11 @@
 <?php
- 
+
 namespace App\Http\Controllers;
- 
+
 use Illuminate\Http\Request;
-use App\Libro;
- 
-class LibroController extends Controller
+use App\Articulo;
+
+class ArticuloController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,10 @@ class LibroController extends Controller
     public function index()
     {
         //
-        $libros=Libro::orderBy('id','ASC')->paginate(3);
-        return view('Libro.index',compact('libros')); 
+        $articulos=Articulo::orderBy('id','ASC')->paginate(3);
+        return view('Articulo.index',compact('articulos')); 
     }
- 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -27,9 +27,9 @@ class LibroController extends Controller
     public function create()
     {
         //
-        return view('Libro.create');
+        return view('Articulo.create');
     }
- 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -39,11 +39,11 @@ class LibroController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request,[ 'nombre'=>'required', 'resumen'=>'required', 'npagina'=>'required', 'edicion'=>'required', 'autor'=>'required', 'npagina'=>'required', 'precio'=>'required']);
-        Libro::create($request->all());
-        return redirect()->route('empleado.index')->with('success','Registro creado satisfactoriamente');
+        $this->validate($request,[ 'id'=>'required', 'descripcion'=>'required', 'precio'=>'required', 'stock'=>'required']);
+        Articulo::create($request->all());
+        return redirect()->route('articulo.index')->with('success','Registro creado satisfactoriamente');
     }
- 
+
     /**
      * Display the specified resource.
      *
@@ -52,10 +52,11 @@ class LibroController extends Controller
      */
     public function show($id)
     {
-        $libros=Libro::find($id);
-        return  view('libro.show',compact('libros'));
+        //
+        $articulos=Articulo::find($id);
+        return  view('articulo.show',compact('articulos'));
     }
- 
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -65,10 +66,10 @@ class LibroController extends Controller
     public function edit($id)
     {
         //
-        $libro=libro::find($id);
-        return view('libro.edit',compact('libro'));
+        $articulo=articulo::find($id);
+        return view('articulo.edit',compact('articulo'));
     }
- 
+
     /**
      * Update the specified resource in storage.
      *
@@ -76,15 +77,16 @@ class LibroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)    {
+    public function update(Request $request, $id)
+    {
         //
-        $this->validate($request,[ 'nombre'=>'required', 'resumen'=>'required', 'npagina'=>'required', 'edicion'=>'required', 'autor'=>'required', 'npagina'=>'required', 'precio'=>'required']);
+        $this->validate($request,[ 'id'=>'required', 'descripcion'=>'required', 'precio'=>'required', 'stock'=>'required']);
  
-        libro::find($id)->update($request->all());
-        return redirect()->route('empleado.index')->with('success','Registro actualizado satisfactoriamente');
- 
+        articulo::find($id)->update($request->all());
+        return redirect()->route('articulo.index')->with('success','Registro actualizado satisfactoriamente');
+
     }
- 
+
     /**
      * Remove the specified resource from storage.
      *
@@ -94,7 +96,7 @@ class LibroController extends Controller
     public function destroy($id)
     {
         //
-         Libro::find($id)->delete();
-        return redirect()->route('empleado.index')->with('success','Registro eliminado satisfactoriamente');
+        Articulo::find($id)->delete();
+        return redirect()->route('articulo.index')->with('success','Registro eliminado satisfactoriamente');
     }
 }

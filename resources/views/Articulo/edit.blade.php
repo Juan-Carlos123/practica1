@@ -18,72 +18,59 @@
 				{{Session::get('success')}}
 			</div>
 			@endif
- 
+
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">Empleado</h3>
+					<h3 class="panel-title">Nuevo Articulo</h3>
 				</div>
 				<div class="panel-body">					
 					<div class="table-container">
-						<form method="POST" action="{{ route('empleado.update',$libro->id) }}"  role="form">
+						<form method="POST" action="{{ route('articulo.update',$articulo->id) }}"  role="form">
 							{{ csrf_field() }}
 							<input name="_method" type="hidden" value="PATCH">
 							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
-										<input type="text" name="npagina" id="npagina" class="form-control input-sm" value="{{$libro->npagina}}">
+										<input type="text" name="id" id="id" class="form-control input-sm" value="{{$articulo->id}}">
 									</div>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
-										<input type="text" name="nombre" id="nombre" class="form-control input-sm" value="{{$libro->nombre}}">
+										<input type="text" name="descripcion" id="descripcion" class="form-control input-sm" value="{{$articulo->descripcion}}">
 									</div>
 								</div>
 							</div>
 
-							<div class="row">
-								<div class="col-xs-6 col-sm-6 col-md-6">
-									<div class="form-group">
-										<input type="text" name="autor" id="autor" class="form-control input-sm" value="{{$libro->autor}}">
-									</div>
-								</div>
-								<div class="col-xs-6 col-sm-6 col-md-6">
-									<div class="form-group">
-										<input type="text" name="precio" id="precio" class="form-control input-sm" value="{{$libro->precio}}">
-									</div>
-								</div>
-							</div>
- 
 							<!--div class="form-group">
-								<textarea name="resumen" class="form-control input-sm"  placeholder="Apellido">{{$libro->resumen}}</textarea>
+								<textarea name="resumen" class="form-control input-sm"  placeholder="Resumen">$libro->resumen</textarea>
 							</div-->
 							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
-										<input type="text" name="resumen" id="resumen" class="form-control input-sm" value="{{$libro->resumen}}">
+										<input type="text" name="precio" id="precio" class="form-control input-sm" value="{{$articulo->precio}}">
 									</div>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
-										<input type="text" name="edicion" id="edicion" class="form-control input-sm" value="{{$libro->edicion}}">
+										<input type="text" name="stock" id="stock" class="form-control input-sm" value="{{$articulo->stock}}">
 									</div>
 								</div>
 							</div>
 							<!--div class="form-group">
-								<textarea name="autor" class="form-control input-sm" placeholder="Dirección">{{$libro->autor}}</textarea>
+								<textarea name="autor" class="form-control input-sm" placeholder="Autor">$libro->autor</textarea>
 							</div-->
 							<div class="row">
- 
+
 								<div class="col-xs-12 col-sm-12 col-md-12">
 									<input type="submit"  value="Actualizar" class="btn btn-success btn-block">
-									<a href="{{ route('empleado.index') }}" class="btn btn-info btn-block" >Atrás</a>
+									<a href="{{ route('articulo.index') }}" class="btn btn-info btn-block" >Atrás</a>
 								</div>	
- 
+
 							</div>
 						</form>
 					</div>
 				</div>
- 
+
 			</div>
 		</div>
 	</section>

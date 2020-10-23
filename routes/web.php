@@ -18,4 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/libro', 'LibroController');
+Route::resource('/empleado', 'LibroController');
+
+Route::resource('/articulo', 'ArticuloController');

@@ -13,10 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    Tu entraste
+                    Bienvenido a las Tablas
                 </div>
-                <a href="/libro">Presiona para ir al crud</a>
+                <a href="/empleado">-->Tabla de Empleado </a>
+                <br>
+                <a href="/articulo">--> Tabla de Articulos </a>
             </div>
         </div>
     </div>
