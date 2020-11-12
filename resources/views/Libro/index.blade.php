@@ -5,10 +5,10 @@
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="pull-left"><h3>Empleados</h3></div>
+          <div class="pull-left"><h3>Trabajadores</h3></div>
           <div class="pull-right">
             <div class="btn-group">
-              <a href="{{ route('empleado.create') }}" class="btn btn-info" >Añadir Empleado</a>
+              <a href="{{ route('empleado.create') }}" class="btn btn-info" >Añadir Trabajadores</a>
             </div>
           </div>
           <div class="table-container">
@@ -16,8 +16,7 @@
              <thead>
                <th>Id</th>
                <th>Nombre</th>
-               <th>Apellido</th>
-               <th>Edad</th>
+               
                <th>Login</th>
                <th>Clave</th>
                <th>Editar</th>
@@ -29,8 +28,7 @@
               <tr>
                 <td>{{$libro->npagina}}</td>
                 <td>{{$libro->nombre}}</td>
-                <td>{{$libro->autor}}</td>
-                <td>{{$libro->precio}}</td>
+               
                 <td>{{$libro->resumen}}</td>
                 <td>{{$libro->edicion}}</td>
                 

@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Inicio</div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -13,11 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    Bienvenido a las Tablas
+                    
                 </div>
-                <a href="/empleado">-->Tabla de Empleado </a>
-                <br>
-                <a href="/articulo">--> Tabla de Articulos </a>
+                <button class="bt1 btr"><a href="/empleado">Empleado </a></button>
+                <button class="bt1 btx"><a href="/articulo">Articulos </a></button>
+            
             </div>
         </div>
     </div>
